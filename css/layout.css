@@ -160,6 +160,7 @@
 .hero__actions {
     display: flex;
     gap: var(--space-4);
+    margin-bottom: var(--space-8);
 }
 
 .hero__image-wrapper {
