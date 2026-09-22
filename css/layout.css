@@ -123,6 +123,7 @@
     font-family: var(--font-mono);
     color: var(--accent-secondary);
     margin-bottom: var(--space-3);
+    padding-top: var(--space-4);
     display: block;
 }
 
