@@ -173,6 +173,7 @@
     width: 400px;
     height: 400px;
     object-fit: cover;
+    object-position: top center;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     border: 4px solid var(--border-glass);
     box-shadow: var(--shadow-glow);
