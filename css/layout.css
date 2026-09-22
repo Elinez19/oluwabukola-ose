@@ -37,6 +37,7 @@
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    position: relative;
 }
 
 .nav__logo {
@@ -52,6 +53,9 @@
 .nav__list {
     display: flex;
     gap: var(--space-6);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav__link {
