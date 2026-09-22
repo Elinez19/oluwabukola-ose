@@ -136,6 +136,17 @@
     margin-bottom: var(--space-5);
 }
 
+.typing-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: var(--accent-secondary);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 .hero__desc {
     color: var(--text-secondary);
     font-size: 1.1rem;

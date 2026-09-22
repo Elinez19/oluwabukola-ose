@@ -15,3 +15,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Typing effect for hero subtitle
+const subtitle = document.querySelector('.hero__subtitle');
+if (subtitle) {
+    const text = subtitle.textContent;
+    subtitle.textContent = '';
+    let i = 0;
+    
+    // Add blinking cursor
+    subtitle.classList.add('typing-cursor');
+    
+    function typeWriter() {
+        if (i < text.length) {
+            subtitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    }
+    
+    // Start typing after a short delay
+    setTimeout(typeWriter, 500);
+}
