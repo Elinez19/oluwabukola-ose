@@ -69,6 +69,55 @@
     color: var(--accent-secondary);
 }
 
+.nav__toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 100;
+}
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+.nav__toggle.active .hamburger {
+    background: transparent;
+}
+
+.nav__toggle.active .hamburger::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav__toggle.active .hamburger::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -209,9 +258,39 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .nav__list {
-        display: none; /* simple mobile hide for now */
+    
+    .nav__toggle {
+        display: block;
     }
+
+    .nav__list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        left: auto;
+        transform: none;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--bg-glass);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease;
+        border-left: 1px solid var(--border-glass);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .nav__list.show-menu {
+        right: 0;
+    }
+
+    .nav__link {
+        font-size: 1.25rem;
+    }
+
     .hero__image {
         width: 300px;
         height: 300px;
